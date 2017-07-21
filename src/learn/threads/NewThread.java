@@ -1,13 +1,15 @@
 package learn.threads;
 
 public class NewThread implements Runnable {
-    protected Thread t;
+    public Thread t;
+    String threadName = "";
 
-    NewThread() {
-        t = new Thread(this, "Demo Thread");
+    NewThread(String name) {
+        threadName = name;
+        t = new Thread(this, threadName);
         System.out.println("Child Thread" + t);
         t.start();
-        System.out.println("End NewThread Constructor");
+        System.out.println("End " + t.getName() + "NewThread Constructor");
     }
 
 
@@ -16,12 +18,12 @@ public class NewThread implements Runnable {
 
         try {
             for (int i = 5; i > 0; i--) {
-                System.out.println("Child Thread: " + i);
-                Thread.sleep(1000);
+                System.out.println(threadName+" Thread: " + i);
+                Thread.sleep(500);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Exiting Child Thread");
+        System.out.println("Exiting " + threadName + "Thread");
     }
 }
