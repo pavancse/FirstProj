@@ -1,12 +1,13 @@
 package learn.threads;
 
 public class NewThread implements Runnable {
-    Thread t;
+    private Thread t;
 
     NewThread() {
         t = new Thread(this, "Demo Thread");
         System.out.println("Child Thread" + t);
         t.start();
+        System.out.println("End NewThread Constructor");
     }
 
 

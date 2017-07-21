@@ -3,6 +3,7 @@ package learn.threads;
 public class MainThread {
     public static void main(String args[]) {
         new NewThread();
+        System.out.println("Continue Main Thread");
         Thread t = Thread.currentThread();
         System.out.println("Main Thread: "+t);
         t.setName("Main");
