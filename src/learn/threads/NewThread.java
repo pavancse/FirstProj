@@ -1,7 +1,7 @@
 package learn.threads;
 
 public class NewThread implements Runnable {
-    private Thread t;
+    protected Thread t;
 
     NewThread() {
         t = new Thread(this, "Demo Thread");
